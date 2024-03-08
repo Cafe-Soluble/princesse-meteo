@@ -3,6 +3,8 @@
 
 :root {
     --couleur-principale: #e7b8ae;
+    --color-font-btn-small: #ca998f;
+    --color-font-btn: #d49e92;
   }
 
 
@@ -41,7 +43,7 @@ body{
     border: 0;
     background: #eee6fc;
     font-size: 0.9rem;
-    color: var(--couleur-principale);
+    color: var(--color-font-btn-small);
     height: 2.188rem;
     width: 2.188rem;
     border-radius: 50%;
@@ -149,7 +151,7 @@ body{
     margin-top: 1rem;
     letter-spacing: 0.02rem;
     color: rgb(117, 116, 116);
-    color: var(--couleur-principale);
+    color: var(--color-font-btn);
 }
 
 .music-progress{
@@ -210,7 +212,7 @@ body{
     outline: 0;
     font-size: 2rem;
     background: #fff;
-    color: var(--couleur-principale);
+    color: var(--color-font-btn);
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
@@ -227,7 +229,7 @@ body{
 .playpause{
     font-size: 1.7rem;
     /* position: absolute; */
-    background: var(--couleur-principale);
+    background: var(--color-font-btn);
     height: 4.5rem;
     width: 4.5rem;
     color: #fff;
