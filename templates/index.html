@@ -1,11 +1,11 @@
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='images/ico/watermelon_32x32.png') }}" type="image/x-icon">
     <script src="https://kit.fontawesome.com/0c3e7b6922.js" crossorigin="anonymous"></script>
-    <title>Zero</title>
+    <title>Princesse Météo</title>
 </head>
 <body>
     <div class="music-container">
@@ -29,7 +29,7 @@
                 <img src="{{ url_for('static', filename='images/princesse-meteo.png') }}" alt="song-images" id="img">
             </div>
             <div class="music-info">
-                <h2 id="title">La Princesse Winesound</h2>
+                <h2 id="title">La Princesse Météo</h2>
             </div>
             <audio src="{{ url_for('static', filename='music/princesse-meteo.mp3') }}" id="audio"></audio>
             <div class="music-progress">
