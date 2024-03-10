@@ -296,16 +296,13 @@ body{
 }
 .current-line{
     padding: 10px 10px 10px 10px;
-    font-size: 1.6em;
-    color: #f5f1ef;
-    
-
+    font-size: 1.65em;
+    color: #fdfbf9;
 }
 
 .other-line{
-padding: 7px 0;
-font-size: 1em;
-color: #f5f1ef;
-
+    padding: 7px 0;
+    font-size: 1em;
+    color: #ebe3e0;
 }
 
