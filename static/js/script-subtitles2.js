@@ -84,7 +84,7 @@ const subtitles = [
     {
         "startTime": "0:38",
         "endTime": "0:43",
-        "text": "Mais mon sujet préféré, c'est bien sûr ..."
+        "text": "Mais mon sujet préféré, c'est bien sûr"
     }, 
     {
         "startTime": "0:43",
@@ -123,8 +123,8 @@ const subtitles = [
     },
     {
         "startTime": "1:02",
-        "endTime": "1:04",
-        "text": "Je cours après ma thèse ..."
+        "endTime": "1:05",
+        "text": "Je cours après ma thèse"
     },
     {
         "startTime": "1:05",
@@ -154,7 +154,7 @@ const subtitles = [
     {
         "startTime": "1:20",
         "endTime": "1:26",
-        "text": "Allô Dany ? Vingt-huit degrés, quatre-vingt-cinq pourcent d'humidité"
+        "text": "Allô Dany ? 28 degrés, 85% d'humidité"
     },
     {
         "startTime": "1:26",
@@ -208,7 +208,7 @@ const subtitles = [
     },
     {
         "startTime": "2:06",
-        "endTime": "2:28",
+        "endTime": "2:29",
         "text": "Princesse de la météo"
     }
   ]
@@ -308,11 +308,14 @@ function updateLyrics(currentTime) {
     line1.textContent = subtitles[currentIndex].text;
     line1.classList.add("current-line");
     line1.classList.remove("other-line");
+
     line2.textContent = subtitles[currentIndex + 1].text;
     line2.classList.remove("current-line");
     line2.classList.add("other-line");
+
     line3.textContent = subtitles[currentIndex + 2].text;
     line3.classList.remove("current-line");
+
   } else if (currentIndex === subtitles.length - 1) { // Cas particulier fin de la musique
     line1.classList.remove("current-line");
     line1.classList.add("other-line");
@@ -328,13 +331,15 @@ function updateLyrics(currentTime) {
     line1.classList.remove("current-line");
     line1.classList.add("other-line");
 
-    line2.textContent = subtitles[currentIndex].text;
-    line2.classList.add("current-line");
+    line2.textContent = subtitles[currentIndex].text;    
     line2.classList.remove("other-line");
+    line2.classList.add("current-line");
+
 
     line3.textContent = subtitles[currentIndex + 1].text;
     line3.classList.remove("current-line");
-  
+    line3.classList.add("other-line");
+
   }
 }
 
