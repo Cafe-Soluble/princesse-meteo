@@ -8,14 +8,6 @@
     <title>Princesse Météo</title>
 </head>
 <body>
-    <div class="lyrics-container">
-        <div class="music-info">
-            <h2 id="title">La Princesse Météo</h2>
-            <p class="lyrics-focus" id="lyrics"></p>
-          </div>
-    </div>
-  
-      
 
     <div class="music-container">
 
@@ -77,6 +69,23 @@
             </div>
         </div>
     </div>    
-    <script src="{{ url_for('static', filename='/js/script-subtitles.js') }}"></script>
+
+    <!-- <div class="lyrics-container">
+        <div class="music-info">
+            <p id="prev-lyrics" class="other-line"></p>
+            <p id="current-lyrics" class="current-line"></p>
+            <p id="next-lyrics" class="other-line"></p>
+          </div>
+    </div> -->
+
+    <div class="lyrics-container">
+        <div class="music-info">
+            <p id="line-1" class="other-line"></p>
+            <p id="line-2" class="current-line"></p>
+            <p id="line-3" class="other-line"></p>
+          </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='/js/script-subtitles2.js') }}"></script>
 </body>
 </html>

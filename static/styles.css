@@ -21,6 +21,7 @@ body{
 }
 
 .music-container{
+    margin-top: 80px;
     width: 100%;
     /* min-height: 100vh; */
     display: grid;
@@ -290,10 +291,17 @@ body{
 /* PARTIE LYRICS  */
 
 .lyrics-container{
-    height: 150px;
-    border: solid red 1px;
+    height: 200px;
+    margin-top: 50px;
 }
-.lyrics-focus{
+.current-line{
+    padding: 10px 10px 10px 10px;
     font-size: 1.8em;
     color: #f5f1ef;
+}
+
+.other-line{
+padding: 7px 0;
+font-size: 1em;
+color: #f5f1ef;
 }

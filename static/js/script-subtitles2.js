@@ -1,10 +1,6 @@
-const prevLyrics = document.querySelector("#prev-lyrics");
-const currentLyrics = document.querySelector("#current-lyrics");
-const nextLyrics = document.querySelector("#next-lyrics");
-
-
-const lyrics = document.querySelector("#lyrics");
-
+const line1 = document.querySelector("#line-1");
+const line2 = document.querySelector("#line-2");
+const line3 = document.querySelector("#line-3");
 const img = document.querySelector("#img");
 const playPause = document.querySelector("#playpause");
 const playPauseBtn = document.querySelector("#playpause-btn");
@@ -112,7 +108,7 @@ const subtitles = [
     },
     {
         "startTime": "0:52",
-        "endTime": "0:55",
+        "endTime": "0:56",
         "text": "La Princesse Winesound"
     },
     {
@@ -207,12 +203,12 @@ const subtitles = [
     },
     {
         "startTime": "2:01",
-        "endTime": "2:04",
+        "endTime": "2:06",
         "text": "... de la météo"
     },
     {
-        "startTime": "2:07",
-        "endTime": "2:10",
+        "startTime": "2:06",
+        "endTime": "2:28",
         "text": "Princesse de la météo"
     }
   ]
@@ -296,62 +292,51 @@ function pauseSong(){
   audio.pause();
 }
 
-let musicJustStarted = true;
-
 function updateLyrics(currentTime) {
-    const currentTimeStr = formatTime(currentTime);
-    let currentIndex = 0;
-  
-    for (let i = 0; i < subtitles.length; i++) {
-      const subtitle = subtitles[i];
-      if (currentTimeStr >= subtitle.startTime && currentTimeStr < subtitle.endTime) {
-        currentIndex = i;
-        break;
-      }
-    }
-  
-    if (currentIndex === 0) {
-      currentLyrics.textContent = subtitles[currentIndex].text;
-      nextLyrics.textContent = subtitles[currentIndex + 1].text;
-    } else if (currentIndex === subtitles.length - 1) {
-      prevLyrics.textContent = subtitles[currentIndex - 1].text;
-      currentLyrics.textContent = subtitles[currentIndex].text;
-    } else {
-      prevLyrics.textContent = subtitles[currentIndex - 1].text;
-      currentLyrics.textContent = subtitles[currentIndex].text;
-      nextLyrics.textContent = subtitles[currentIndex + 1].text;
-    }
-  
-    // Mettez à jour les classes des lignes de paroles
-    if (currentIndex === 0) {
-      setTimeout(() => {
-        prevLyrics.classList.remove("current-line");
-        prevLyrics.classList.add("other-line");
-        currentLyrics.classList.remove("other-line");
-        currentLyrics.classList.add("current-line");
-      }, 10);
-    } else if (currentIndex === 1) {
-      setTimeout(() => {
-        prevLyrics.classList.remove("other-line");
-        prevLyrics.classList.add("current-line");
-        currentLyrics.classList.remove("current-line");
-        currentLyrics.classList.add("other-line");
-      }, 10);
-    } else {
-      setTimeout(() => {
-        prevLyrics.classList.remove("current-line");
-        prevLyrics.classList.add("other-line");
-        currentLyrics.classList.remove("other-line");
-        currentLyrics.classList.add("current-line");
-        nextLyrics.classList.remove("current-line");
-        nextLyrics.classList.add("other-line");
-      }, 10);
+  const currentTimeStr = formatTime(currentTime);
+  let currentIndex = 0;
+  for (let i = 0; i < subtitles.length; i++) {
+    const subtitle = subtitles[i];
+    if (currentTimeStr >= subtitle.startTime && currentTimeStr < subtitle.endTime) {
+      currentIndex = i;
+      break;
     }
   }
 
+  // Gérez les cas particuliers au début et à la fin de la musique
+  if (currentIndex === 0) { // Cas particulier du début de la musique
+    line1.textContent = subtitles[currentIndex].text;
+    line1.classList.add("current-line");
+    line1.classList.remove("other-line");
+    line2.textContent = subtitles[currentIndex + 1].text;
+    line2.classList.remove("current-line");
+    line2.classList.add("other-line");
+    line3.textContent = subtitles[currentIndex + 2].text;
+    line3.classList.remove("current-line");
+  } else if (currentIndex === subtitles.length - 1) { // Cas particulier fin de la musique
+    line1.classList.remove("current-line");
+    line1.classList.add("other-line");
 
+    line2.classList.remove("current-line");
+    line2.classList.add("other-line");
 
+    line3.textContent = subtitles[currentIndex].text;
+    line3.classList.remove("other-line");
+    line3.classList.add("current-line");
+  } else {
+    line1.textContent = subtitles[currentIndex - 1].text;
+    line1.classList.remove("current-line");
+    line1.classList.add("other-line");
 
+    line2.textContent = subtitles[currentIndex].text;
+    line2.classList.add("current-line");
+    line2.classList.remove("other-line");
+
+    line3.textContent = subtitles[currentIndex + 1].text;
+    line3.classList.remove("current-line");
+  
+  }
+}
 
 // loading songs
 
