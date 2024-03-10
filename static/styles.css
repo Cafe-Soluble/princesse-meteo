@@ -22,7 +22,7 @@ body{
 
 .music-container{
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: grid;
     place-items: center;
 }
@@ -285,3 +285,15 @@ body{
     visibility: visible;
 }
 
+
+
+/* PARTIE LYRICS  */
+
+.lyrics-container{
+    height: 150px;
+    border: solid red 1px;
+}
+.lyrics-focus{
+    font-size: 1.8em;
+    color: #f5f1ef;
+}
