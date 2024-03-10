@@ -21,7 +21,7 @@ body{
 }
 
 .music-container{
-    margin-top: 40px;
+    margin-top: 20px;
     width: 100%;
     /* min-height: 100vh; */
     display: grid;
@@ -292,7 +292,7 @@ body{
 
 .lyrics-container{
     height: 200px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .current-line{
     padding: 10px 10px 10px 10px;
