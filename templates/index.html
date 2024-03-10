@@ -2,12 +2,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='images/ico/icons8-music-32.png') }}" type="image/x-icon">
     <script src="https://kit.fontawesome.com/0c3e7b6922.js" crossorigin="anonymous"></script>
     <title>Princesse Météo</title>
 </head>
 <body>
+
     <div class="music-container">
 
         <div class="music-body">
@@ -67,7 +68,24 @@
                 </button>
             </div>
         </div>
+    </div>    
+
+    <!-- <div class="lyrics-container">
+        <div class="music-info">
+            <p id="prev-lyrics" class="other-line"></p>
+            <p id="current-lyrics" class="current-line"></p>
+            <p id="next-lyrics" class="other-line"></p>
+          </div>
+    </div> -->
+
+    <div class="lyrics-container">
+        <div class="music-info">
+            <p id="line-1" class="other-line"></p>
+            <p id="line-2" class="current-line"></p>
+            <p id="line-3" class="other-line"></p>
+          </div>
     </div>
+
     <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
 </body>
 </html>

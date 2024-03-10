@@ -1,3 +1,6 @@
+const line1 = document.querySelector("#line-1");
+const line2 = document.querySelector("#line-2");
+const line3 = document.querySelector("#line-3");
 const img = document.querySelector("#img");
 const playPause = document.querySelector("#playpause");
 const playPauseBtn = document.querySelector("#playpause-btn");
@@ -21,6 +24,195 @@ const songListBtn = document.querySelector("#list");
 const songList = document.querySelector("#songs-list");
 const listCloseBtn = document.querySelector("#listclose");
 // songs array
+
+const subtitles = [
+    {
+      "startTime": "0:00",
+      "endTime": "0:03",
+      "text": "Elle court sur les sentiers"
+    },
+    {
+      "startTime": "0:03",
+      "endTime": "0:06",
+      "text": "Elle court toute la journée"
+    },
+    {
+      "startTime": "0:06",
+      "endTime": "0:12",
+      "text": "La Princesse Winesound, elle ne s'arrête jamais"
+    },
+    {
+        "startTime": "0:12",
+        "endTime": "0:15",
+        "text": "L'escalade est son passe-temps"
+    },
+    {
+        "startTime": "0:15",
+        "endTime": "0:18",
+        "text": "Elle grimpe toujours plus haut"
+    },
+    {
+        "startTime": "0:18",
+        "endTime": "0:24",
+        "text": "Plus rien ne l'arrête, surtout pas la météo"
+    },
+    {
+        "startTime": "0:24",
+        "endTime": "0:27",
+        "text": "Oh météo ..."
+    },
+    {
+        "startTime": "0:27",
+        "endTime": "0:31",
+        "text": "En doctorat de psycho' elle étudie les fachos"
+    },
+    {
+        "startTime": "0:31",
+        "endTime": "0:33",
+        "text": "(Dany, dany, dany ...)"
+    },
+    {
+        "startTime": "0:33",
+        "endTime": "0:37",
+        "text": "La Princesse Winesound, c'est la terreur des machos"
+    },
+    {
+        "startTime": "0:37",
+        "endTime": "0:38",
+        "text": "(Thémis, thémis ...)"
+    }, 
+    {
+        "startTime": "0:38",
+        "endTime": "0:43",
+        "text": "Mais mon sujet préféré, c'est bien sûr"
+    }, 
+    {
+        "startTime": "0:43",
+        "endTime": "0:45",
+        "text": "La météo !"
+    }, 
+    {
+        "startTime": "0:45",
+        "endTime": "0:47",
+        "text": "Je suis la Princesse Winesound"
+    }, 
+    {
+        "startTime": "0:47",
+        "endTime": "0:49",
+        "text": "Toujours éclatante, toujours bienveillante"
+    }, 
+    {
+        "startTime": "0:49",
+        "endTime": "0:52",
+        "text": "Mais surtout fatchigante"
+    },
+    {
+        "startTime": "0:52",
+        "endTime": "0:56",
+        "text": "La Princesse Winesound"
+    },
+    {
+        "startTime": "0:56",
+        "endTime": "0:58",
+        "text": "Je cours, je cours !"
+    },
+    {
+        "startTime": "0:58",
+        "endTime": "1:02",
+        "text": "La Princesse Winesound !"
+    },
+    {
+        "startTime": "1:02",
+        "endTime": "1:05",
+        "text": "Je cours après ma thèse"
+    },
+    {
+        "startTime": "1:05",
+        "endTime": "1:08",
+        "text": "Qu'il fasse froid, qu'il fasse chaud"
+    },
+    {
+        "startTime": "1:08",
+        "endTime": "1:11",
+        "text": "Je veux parler de la météo"
+    },
+    {
+        "startTime": "1:11",
+        "endTime": "1:14",
+        "text": "Demain j'appelle Thémis, il me faut du renouveau"
+    },
+    {
+        "startTime": "1:14",
+        "endTime": "1:17",
+        "text": "Je vais changer de thèse, ça sera la météo"
+    },
+    {
+        "startTime": "1:17",
+        "endTime": "1:20",
+        "text": "Allô Thémis ? Je veux parler de la météo"
+    },
+    {
+        "startTime": "1:20",
+        "endTime": "1:26",
+        "text": "Allô Dany ? 28 degrés, 85% d'humidité"
+    },
+    {
+        "startTime": "1:26",
+        "endTime": "1:32",
+        "text": "Changer de thèse (la thèse ...)"
+    },
+    {
+        "startTime": "1:32",
+        "endTime": "1:37",
+        "text": "Pour la météo !"
+    },
+    {
+        "startTime": "1:37",
+        "endTime": "1:41",
+        "text": "La Princesse Winesound"
+    },
+    {
+        "startTime": "1:41",
+        "endTime": "1:45",
+        "text": "La princesse de la météo"
+    },
+    {
+        "startTime": "1:45",
+        "endTime": "1:49",
+        "text": "Toujours bienveillante"
+    },
+    {
+        "startTime": "1:49",
+        "endTime": "1:51",
+        "text": "Mais parfois méga chiante"
+    },
+    {
+        "startTime": "1:51",
+        "endTime": "1:54",
+        "text": "Qu'il fasse froid, qu'il fasse chaud"
+    },
+    {
+        "startTime": "1:54",
+        "endTime": "1:57",
+        "text": "Et même si y'a rien de nouveau"
+    },
+    {
+        "startTime": "1:57",
+        "endTime": "2:01",
+        "text": "Je parle encore ..."
+    },
+    {
+        "startTime": "2:01",
+        "endTime": "2:06",
+        "text": "... de la météo"
+    },
+    {
+        "startTime": "2:06",
+        "endTime": "2:29",
+        "text": "Princesse de la météo"
+    }
+  ]
+
 
 const songs = [
 //   {
@@ -73,6 +265,9 @@ const songs = [
 //   },
 ];
 
+
+
+
 // deafult song index 
 
 let songIndex = 2;
@@ -95,6 +290,57 @@ function pauseSong(){
   isPlaying = false;
   playPauseBtn.classList.replace("fa-pause","fa-play");
   audio.pause();
+}
+
+function updateLyrics(currentTime) {
+  const currentTimeStr = formatTime(currentTime);
+  let currentIndex = 0;
+  for (let i = 0; i < subtitles.length; i++) {
+    const subtitle = subtitles[i];
+    if (currentTimeStr >= subtitle.startTime && currentTimeStr < subtitle.endTime) {
+      currentIndex = i;
+      break;
+    }
+  }
+
+  // Gérez les cas particuliers au début et à la fin de la musique
+  if (currentIndex === 0) { // Cas particulier du début de la musique
+    line1.textContent = subtitles[currentIndex].text;
+    line1.classList.add("current-line");
+    line1.classList.remove("other-line");
+
+    line2.textContent = subtitles[currentIndex + 1].text;
+    line2.classList.remove("current-line");
+    line2.classList.add("other-line");
+
+    line3.textContent = subtitles[currentIndex + 2].text;
+    line3.classList.remove("current-line");
+
+  } else if (currentIndex === subtitles.length - 1) { // Cas particulier fin de la musique
+    line1.classList.remove("current-line");
+    line1.classList.add("other-line");
+
+    line2.classList.remove("current-line");
+    line2.classList.add("other-line");
+
+    line3.textContent = subtitles[currentIndex].text;
+    line3.classList.remove("other-line");
+    line3.classList.add("current-line");
+  } else {
+    line1.textContent = subtitles[currentIndex - 1].text;
+    line1.classList.remove("current-line");
+    line1.classList.add("other-line");
+
+    line2.textContent = subtitles[currentIndex].text;    
+    line2.classList.remove("other-line");
+    line2.classList.add("current-line");
+
+
+    line3.textContent = subtitles[currentIndex + 1].text;
+    line3.classList.remove("current-line");
+    line3.classList.add("other-line");
+
+  }
 }
 
 // loading songs
@@ -157,8 +403,18 @@ function updateProgress(e){
       currentSeconds = `0${currentSeconds}`;
     }
     currTime.textContent = `${currentMinutes}:${currentSeconds}`;
+    updateLyrics(audio.currentTime);
   }
 }
+
+function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    let seconds = Math.floor(time % 60);
+    if (seconds < 10) {
+      seconds = `0${seconds}`;
+    }
+    return `${minutes}:${seconds}`;
+  }
 
 function progressSlide(e){
   const { value } = e.target;
