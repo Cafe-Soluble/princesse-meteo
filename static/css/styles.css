@@ -6,7 +6,7 @@
     --color-font-btn-small: #ca998f;
     --color-font-btn: #d49e92;
   }
-
+  /* e7b8ae */
 
 
 *{
@@ -237,6 +237,7 @@ body{
     border-radius: 50%;
     display: grid;
     place-items: center;
+    user-select: none;
 }
 
 .fa-play{
